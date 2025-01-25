@@ -1,0 +1,150 @@
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { Calendar } from '@/components/ui/calendar';
+import { useRouter } from 'next/router';
+
+const ConvivialCafe = () => {
+  const router = useRouter();
+
+  const navigateToFullMenu = () => {
+    router.push('/full-menu');
+  };
+
+  return (
+    <div className="font-serif">
+      {/* Updated Hero Section */}
+      <div className="relative">
+        <div
+          className="bg-cover bg-center h-[500px] shadow-lg"
+          style={{
+            backgroundImage: "url('https://convivialcafe.ca/wp-content/uploads/2024/02/Convivial-description-min-1024x768.jpg')", // Replace with your image URL
+          }}
+        >
+          <div className="bg-gradient-to-t from-black to-transparent h-full flex flex-col justify-start items-start text-left text-white px-6 py-8">
+            <h1 className="text-3xl font-bold tracking-wide">Convivial Cafe and Bakery</h1>
+            <p className="text-base">A cozy neighborhood spot on the seawall at Leg in Boot Square.</p>
+          </div>
+        </div>
+      </div>
+
+      <main className="px-4 py-8 max-w-5xl mx-auto">
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Daily Lunch Menu</h2>
+          <p className="mb-6">Enjoy our fresh soups, salads, and sandwiches served daily! Note: Menu is subject to change.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card>
+              <CardContent>
+                <h3 className="text-xl font-semibold">Monday</h3>
+                <ul>
+                  <li>Red Lentil Soup - Simple roasted flavor</li>
+                  <li>Hot and Sour Chicken Soup - No apologies! It’s hot, sour, and tasty</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent>
+                <h3 className="text-xl font-semibold">Tuesday</h3>
+                <ul>
+                  <li>Roasted Butternut Squash Soup - Coconut-creamy, hint of curry</li>
+                  <li>Tomato & Italian Sausage Soup - Smokey and a bit spicy</li>
+                </ul>
+              </CardContent>
+            </Card>
+            {/* Add more days similarly */}
+          </div>
+          <div className="mt-6 text-center">
+            <Button onClick={navigateToFullMenu} className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+              View Full Menu
+            </Button>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Open Hours & Contact</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-xl font-semibold">Hours</h3>
+              <ul>
+                <li>Mon – Sat: 8:30 am – 5:30 pm</li>
+                <li>Sun: 10 am – 5:30 pm</li>
+                <li>"We stay open later on sunny days"</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold">Contact</h3>
+              <p>Email: convivialcafe@gmail.com</p>
+              <p>Phone/Text: 604-675-9885</p>
+              <p>Address: 680A Leg in Boot Square, Vancouver, BC, V5Z 4B4</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Our Bread</h2>
+          <p className="mb-4">Handmade, fresh, and delicious. Order 24 hours in advance to enjoy our freshly baked loaves!</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card>
+              <CardContent>
+                <h3 className="text-xl font-semibold">Whole Wheat</h3>
+                <p>Flour, salt, yeast, and water.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent>
+                <h3 className="text-xl font-semibold">Twelve Grain</h3>
+                <p>A dense loaf with a mix of grains including pumpkin seeds and quinoa.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent>
+                <h3 className="text-xl font-semibold">Irish Soda Bread</h3>
+                <p>Non-yeast bread made with buttermilk. Handmade and granny-approved!</p>
+              </CardContent>
+            </Card>
+            {/* Add more bread types similarly */}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Leg In Boot Calendar</h2>
+          <p className="mb-4">Check out upcoming events and happenings in the community!</p>
+          <Calendar />
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Convivial Dinners</h2>
+          <p className="mb-4">Join us for community dinners with a pay-it-forward pricing model.</p>
+          <div>
+            <h3 className="text-xl font-semibold">This Crazy Christmas</h3>
+            <p>Thank-you to everyone who participated!!</p>
+          </div>
+          <div className="mt-6">
+            <h3 className="text-xl font-semibold">Pricing</h3>
+            <p>Sliding-scale pricing for everyone, ensuring affordability and community support.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-yellow-100 py-6 text-center">
+        <p className="mb-2">Convivial Cafe and Bakery</p>
+        <nav>
+          <a href="#" className="mx-2">Home</a>
+          <a href="#" className="mx-2">About and Contact</a>
+          <a href="#" className="mx-2">Our Food and Drinks</a>
+          <a href="#" className="mx-2">Our Bread</a>
+          <a href="#" className="mx-2">Leg In Boot Summer</a>
+          <a href="#" className="mx-2">Convivial Dinners</a>
+        </nav>
+        <div className="mt-4 flex justify-center space-x-4">
+          <FaFacebook size={24} />
+          <FaInstagram size={24} />
+        </div>
+        <p className="mt-4">Email: convivialcafe@gmail.com</p>
+      </footer>
+    </div>
+  );
+};
+
+export default ConvivialCafe;
